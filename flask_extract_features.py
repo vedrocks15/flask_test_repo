@@ -43,7 +43,6 @@ def extract_features():
     try:
         features = features.flatten()
         features = features / norm(features) # std =1 mean = 0
-        end = time.time()
         return jsonify(features.tolist()),200
     except Exception as e:
         return jsonify(["Unknown error"]),400
